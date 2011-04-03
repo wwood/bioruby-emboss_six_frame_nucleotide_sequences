@@ -1,0 +1,1 @@
+require 'bio/sequence/emboss_six_frame_nucleotide_sequences'

@@ -1,6 +1,8 @@
 = bio-emboss_six_frame_nucleotide_sequences
 
-Description goes here.
+A plugin for taking a nucleotide sequence, and returning the nucleotide sequence that was translated by the EMBOSS utility 'transeq' in each frame. The first 3 forward frames are easy enough to work out, but the reverse 3 can be somewhat unintuitive.
+
+  insert example here
 
 == Contributing to bio-emboss_six_frame_nucleotide_sequences
  
