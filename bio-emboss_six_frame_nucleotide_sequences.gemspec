@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "bio-emboss_six_frame_nucleotide_sequences.gemspec",
     "lib/bio-emboss_six_frame_nucleotide_sequences.rb",
     "lib/bio/sequence/emboss_six_frame_nucleotide_sequences.rb",
     "test/data/test.fa",
