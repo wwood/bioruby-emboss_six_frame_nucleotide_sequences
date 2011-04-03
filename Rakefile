@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "bio-emboss_six_frame_nucleotide_sequences"
   gem.homepage = "http://github.com/wwood/bioruby-emboss_six_frame_nucleotide_sequences"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{a method to get the nucleotide sequence of translations done by the EMBOSS bioinformatics package program transeq.}
+  gem.description = %Q{a method to get the nucleotide sequence of translations done by the EMBOSS bioinformatics package program transeq.}
   gem.email = "gmail.com after donttrustben"
   gem.authors = ["Ben J Woodcroft"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
