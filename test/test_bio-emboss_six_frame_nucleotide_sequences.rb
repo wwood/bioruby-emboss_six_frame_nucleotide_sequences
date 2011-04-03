@@ -12,9 +12,9 @@ class TestBioEmbossSixFrameNucleotideSequences < Test::Unit::TestCase
   # >9nt_3
   # DDX
     a = na.new('ATGATGATG')
-    assert_equal na.new('ATGATGATG').downcase, a.transeq_nucleotide_sequence(1)
-    assert_equal na.new('TGATGATG').downcase, a.transeq_nucleotide_sequence(2)
-    assert_equal na.new('GATGATG').downcase, a.transeq_nucleotide_sequence(3)
+    assert_equal na.new('ATGATGATG').downcase, a.nucleotide_sequence_of_transeq_translation(1)
+    assert_equal na.new('TGATGATG').downcase, a.nucleotide_sequence_of_transeq_translation(2)
+    assert_equal na.new('GATGATG').downcase, a.nucleotide_sequence_of_transeq_translation(3)
   end
 
   # >9nt_4
@@ -25,9 +25,9 @@ class TestBioEmbossSixFrameNucleotideSequences < Test::Unit::TestCase
   # IIX
   should "test length divisible by 3 backwards" do
     a = na.new('ATGATGATG')
-    assert_equal na.new('CATCATCAT').downcase, a.transeq_nucleotide_sequence(4)
-    assert_equal na.new('TCATCAT').downcase, a.transeq_nucleotide_sequence(5)
-    assert_equal na.new('ATCATCAT').downcase, a.transeq_nucleotide_sequence(6)
+    assert_equal na.new('CATCATCAT').downcase, a.nucleotide_sequence_of_transeq_translation(4)
+    assert_equal na.new('TCATCAT').downcase, a.nucleotide_sequence_of_transeq_translation(5)
+    assert_equal na.new('ATCATCAT').downcase, a.nucleotide_sequence_of_transeq_translation(6)
   end
 
   should "test length divisible by 3 remainder 1 forwards" do
@@ -38,9 +38,9 @@ class TestBioEmbossSixFrameNucleotideSequences < Test::Unit::TestCase
   # >10nt_3
   # DDX
     a = na.new('ATGATGATGA')
-    assert_equal na.new('ATGATGATGA').downcase, a.transeq_nucleotide_sequence(1)
-    assert_equal na.new('TGATGATGA').downcase, a.transeq_nucleotide_sequence(2)
-    assert_equal na.new('GATGATGA').downcase, a.transeq_nucleotide_sequence(3)
+    assert_equal na.new('ATGATGATGA').downcase, a.nucleotide_sequence_of_transeq_translation(1)
+    assert_equal na.new('TGATGATGA').downcase, a.nucleotide_sequence_of_transeq_translation(2)
+    assert_equal na.new('GATGATGA').downcase, a.nucleotide_sequence_of_transeq_translation(3)
   end
 
   # >10nt_4
@@ -51,9 +51,9 @@ class TestBioEmbossSixFrameNucleotideSequences < Test::Unit::TestCase
   # IIX
   should "test length divisible by 3 remainder 1 backwards" do
     a = na.new('ATGATGATGA')
-    assert_equal na.new('CATCATCAT').downcase, a.transeq_nucleotide_sequence(4)
-    assert_equal na.new('TCATCATCAT').downcase, a.transeq_nucleotide_sequence(5)
-    assert_equal na.new('ATCATCAT').downcase, a.transeq_nucleotide_sequence(6)
+    assert_equal na.new('CATCATCAT').downcase, a.nucleotide_sequence_of_transeq_translation(4)
+    assert_equal na.new('TCATCATCAT').downcase, a.nucleotide_sequence_of_transeq_translation(5)
+    assert_equal na.new('ATCATCAT').downcase, a.nucleotide_sequence_of_transeq_translation(6)
   end
 
   should "test length divisible by 3 remainder 2 forwards" do
@@ -64,9 +64,9 @@ class TestBioEmbossSixFrameNucleotideSequences < Test::Unit::TestCase
   # >11nt_3
   # DDD
     a = na.new('ATGATGATGAT')
-    assert_equal na.new('ATGATGATGAT').downcase, a.transeq_nucleotide_sequence(1)
-    assert_equal na.new('TGATGATGAT').downcase, a.transeq_nucleotide_sequence(2)
-    assert_equal na.new('GATGATGAT').downcase, a.transeq_nucleotide_sequence(3)
+    assert_equal na.new('ATGATGATGAT').downcase, a.nucleotide_sequence_of_transeq_translation(1)
+    assert_equal na.new('TGATGATGAT').downcase, a.nucleotide_sequence_of_transeq_translation(2)
+    assert_equal na.new('GATGATGAT').downcase, a.nucleotide_sequence_of_transeq_translation(3)
   end
 
   # >11nt_4
@@ -77,9 +77,9 @@ class TestBioEmbossSixFrameNucleotideSequences < Test::Unit::TestCase
   # IIIX
   should "test length divisible by 3 remainder 2 backwards" do
     a = na.new('ATGATGATGAT')
-    assert_equal na.new('CATCATCAT').downcase, a.transeq_nucleotide_sequence(4)
-    assert_equal na.new('TCATCATCAT').downcase, a.transeq_nucleotide_sequence(5)
-    assert_equal na.new('ATCATCATCAT').downcase, a.transeq_nucleotide_sequence(6)
+    assert_equal na.new('CATCATCAT').downcase, a.nucleotide_sequence_of_transeq_translation(4)
+    assert_equal na.new('TCATCATCAT').downcase, a.nucleotide_sequence_of_transeq_translation(5)
+    assert_equal na.new('ATCATCATCAT').downcase, a.nucleotide_sequence_of_transeq_translation(6)
   end
 
   # in test/data, 3 nucleotide sequences have been translated by transeq into
@@ -104,7 +104,7 @@ class TestBioEmbossSixFrameNucleotideSequences < Test::Unit::TestCase
       if matches = pname.match(/(.*)_([1-6])/)
         pseq.gsub!(/X/,'') #remove hanging Xs cos bioruby and transeq do that
         # differently
-        assert_equal pseq, na.new(nucleotide_sequences[matches[1]]).transeq_nucleotide_sequence(matches[2].to_i).translate
+        assert_equal pseq, na.new(nucleotide_sequences[matches[1]]).nucleotide_sequence_of_transeq_translation(matches[2].to_i).translate
       else
         raise
       end
